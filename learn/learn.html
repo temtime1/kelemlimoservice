@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Kelem Limo Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #f5f5f5;
+      color: #333333;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #001780;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-slider {
+      position: relative;
+    }
+
+    .image-slider img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .slider-nav {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .slider-nav .fa {
+      font-size: 24px;
+      color: #bbbbbb;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    .slider-nav .fa:hover {
+      color: #000000;
+    }
+
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+      border-radius: 50%;
+      background-color: #bbbbbb;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background-color: #000000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Kelem Limo Service</h1>
+    <div class="image-slider">
+      <div class="slide">
+        <img src="./image/2018-chevy-suburban-nowcar-passenger-seating-cargo-space.jpg" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="./image/53d1ad3209b30145756a61f1bb439693.jpg" alt="Slide 2">
+      </div>
+      <div class="slide">
+        <img src="./image/download.jpg" alt="Slide 3">
+      </div>
+      <div class="slider-nav">
+        <i class="fa fa-chevron-circle-left" onclick="moveSlides(-1)"></i>
+        <i class="fa fa-chevron-circle-right" onclick="moveSlides(1)"></i>
+      </div>
+      <div class="slider-dots">
+        <span class="slider-dot active" onclick="activeSlide(1)"></span>
+        <span class="slider-dot" onclick="activeSlide(2)"></span>
+        <span class="slider-dot" onclick="activeSlide(3)"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    var slideIndex = 1;
+    displaySlide(slideIndex);
+
+    function moveSlides(n) {
+      displaySlide(slideIndex += n);
+    }
+
+    function activeSlide(n) {
+      displaySlide(slideIndex = n);
+    }
+
+    /* Main function */
+    function displaySlide(n) {
+      var i;
+      var totalslides =
+        document.getElementsByClassName("slide");
+
+      var totaldots =
+        document.getElementsByClassName("slider-dot");
+
+      if (n > totalslides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = totalslides.length;
+      }
+      for (i = 0; i < totalslides.length; i++) {
+        totalslides[i].style.display = "none";
+      }
+      for (i = 0; i < totaldots.length; i++) {
+        totaldots[i].className =
+          totaldots[i].className.replace(" active", "");
+      }
+      totalslides[slideIndex - 1].style.display = "block";
+      totaldots[slideIndex - 1].className += " active";
+    }
+  </script>
+</body>
+
+</html>

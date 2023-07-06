@@ -63,7 +63,7 @@ header ul li a {
 }
 
 header ul li a:hover {
-  box-shadow: 0 5px 0 0 #017143 !important; /*** COLOR AND THICKNESS OF THE LINE ON HOVER ***/
+  box-shadow: 0 5px 0 0 #371cce !important; /*** COLOR AND THICKNESS OF THE LINE ON HOVER ***/
   padding-bottom: 1px;
   opacity: 1 !important;
 }
@@ -108,6 +108,15 @@ header ul li a:hover {
   letter-spacing: 1px;
   text-decoration: none;
   margin-right: 15px;
+  transition: 0.2s;
+}
+
+.content .textBox a:hover {
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.4);
+}
+
+.content .textBox a:active {
+  transform: scale(0.95);
 }
 
 .content .imgBox {
@@ -199,6 +208,7 @@ header ul li a:hover {
   background: #fff;
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
+  overflow: hidden;
   transition: 0.5s;
 }
 
@@ -213,7 +223,6 @@ header ul li a:hover {
 }
 
 .card p {
-
   color: #333;
 }
 
@@ -224,60 +233,56 @@ header ul li a:hover {
   justify-content: center;
 } */
 
-.container{
+.container {
   width: 80%;
   margin: 50px auto;
 }
 
-.contact-box{
+.contact-box {
   background: #fff;
   display: flex;
   box-shadow: 0 35px 80px rgba(0, 0, 0, 0.1);
-  
 }
-.contact-left{
+.contact-left {
   flex-basis: 60%;
   padding: 40px 60px;
 }
 
-.contact-right{
+.contact-right {
   flex-basis: 40%;
   padding: 40px;
   background: #371cce;
   color: #fff;
 }
-h1{
+h1 {
   margin-bottom: 10px;
 }
-.container p{
+.container p {
   margin-bottom: 40px;
 }
 
-
-
-.input-row{
+.input-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.input-row .input-group{
+.input-row .input-group {
   flex-basis: 45%;
   color: #333;
 }
-input{
+input {
   width: 100%;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  
 }
 
-input:focus{
+input:focus {
   outline: none;
 }
 
-textarea{
+textarea {
   width: 100%;
   border: 1px solid #ccc;
   outline: none;
@@ -285,7 +290,7 @@ textarea{
   display: block;
 }
 
-button{
+button {
   background: #371cce;
   width: 30%;
   border: none;
@@ -294,40 +299,35 @@ button{
   height: 35px;
   border-radius: 30px;
   margin-top: 20px;
-  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.3);
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.3);
   transition: transform 0.3s;
-  
 }
 
-button:hover{
-  box-shadow: 0px 5px 15px 0px rgba(28,0,181,0.4);
-
+button:hover {
+  box-shadow: 0px 5px 15px 0px rgba(28, 0, 181, 0.4);
 }
 
-button:active{
+button:active {
   transform: scale(0.95);
 }
 
-.contact-left h3{
+.contact-left h3 {
   color: #371cce;
   font-weight: 600;
   margin-bottom: 30px;
-  
 }
-.contact-right h3{
+.contact-right h3 {
   color: #fff;
   font-weight: 600;
   margin-bottom: 30px;
-  
 }
-tr td:first-child{
+tr td:first-child {
   padding-right: 20px;
 }
 
-tr td{
+tr td {
   padding-top: 20px;
 }
-
 
 @media (max-width: 991px) {
   header {
@@ -409,9 +409,59 @@ tr td{
     margin: 0 10px;
   }
   .thumb li img {
-    width: 90px;
+    width: 80px;
   }
   .circle {
     clip-path: circle(350px at right bottom);
   }
+  #About {
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  #About .card {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15px;
+  }
+  #About.card h2 {
+    font-size: 2em;
+  }
+  #About.card p {
+    font-size: 1em;
+  }
+  .container{
+    width: 80%;
+    margin: 50px auto;
+  }
+  .contact-box{
+    flex-direction: column;
+  }
+  #contact{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-left{
+    flex-basis: 100%;
+    padding: 40px 60px;
+  }
+  .input-row {
+    flex-direction: column;
+  }
+
+  .contact-right h3 {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  tr td:first-child {
+    padding-right: 12px;
+
+  }
+  tr td {
+    font-size: 14px;
+  }
+
+ 
 }
