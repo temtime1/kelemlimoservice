@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="Home">
+      <div class="circle"></div>
+      <header>
+        <a href="#" class="logo"><span>K</span>ELEM</a>
+        <div class="toggle" onclick="toggleMenu()"></div>
+        <ul class="navgation">
+          <li><a href="#Home">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </header>
+      <div class="content">
+        <div class="textBox">
+          <h2>Redefining Transportation <br />with <span>Elegance</span></h2>
+          <p>
+            Experience the epitome of luxury and convenience as you embark on an
+            extraordinary journey with our premier transportation service. Step
+            into a world where every detail is meticulously crafted to ensure
+            your utmost comfort and satisfaction.
+          </p>
+
+          <a href="#">Make Scheule</a>
+          <a href="#">Learn More</a>
+        </div>
+        <div class="imgBox">
+          <img
+            src="./Images/2023_chevrolet_suburban_angularfront-removebg-preview.png"
+            class="car"
+          />
+        </div>
+      </div>
+      <ul class="thumb">
+        <li>
+          <img
+            src="./Images/Screenshot_2023-07-05_185231-removebg-preview.png"
+            onclick="imgSlider('./Images/white.png'); changeCircleColor('#d9d8d8')"
+          />
+        </li>
+        <li>
+          <img
+            src="./Images/Screenshot_2023-07-05_182542-removebg-preview.png"
+            onclick="imgSlider('./Images/black.png'); changeCircleColor('#161616')"
+          />
+        </li>
+        <li>
+          <img
+            src="./Images/Screenshot_2023-07-05_182521-removebg-preview.png"
+            onclick="imgSlider('./Images/gray.png'); changeCircleColor('#3c4444')"
+          />
+        </li>
+        <li>
+          <img
+            src="./Images/Screenshot_2023-07-05_182556-removebg-preview.png"
+            onclick="imgSlider('./Images/red.png'); changeCircleColor('#8d282b')"
+          />
+        </li>
+      </ul>
+    </section>
+    <section id="About">
+      <div class="card">
+        <h2>Quality</h2>
+        <p>
+          Our dedication to quality is evident in every aspect of our service.
+          From our meticulously maintained fleet of luxury vehicles to our
+          professional and courteous chauffeurs, we leave no detail overlooked.
+          We aim to create a memorable experience that reflects our commitment
+          to excellence.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Comfort</h2>
+        <p>
+          We understand that comfort is of utmost importance during your
+          travels. Our vehicles are designed with your comfort in mind, offering
+          plush interiors, ample legroom, and climate control. Relax in style
+          and enjoy a smooth and luxurious ride, whether you are traveling for
+          business or pleasure.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Safety</h2>
+        <p>
+          Your safety is our top priority. We adhere to the highest safety
+          standards and employ experienced chauffeurs who are trained to
+          prioritize passenger well-being. Our vehicles are regularly inspected
+          and equipped with advanced safety features, providing you with peace
+          of mind throughout your journey.
+        </p>
+      </div>
+      <div class="card">
+        <h2>Reliability</h2>
+        <p>
+          We value your time and understand the importance of punctuality. With
+          our reliable transportation service, you can trust that we will arrive
+          promptly at your designated location and ensure timely transfers to
+          your destination. Sit back, relax, and let us take care of the
+          logistics.
+        </p>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container">
+        <h1>Connect With Us</h1>
+        <p>We would love to respond to your queries and help with you transportation safely</p>
+        <div class="contact-box">
+            <div class="contact-left">
+                <h3>Sent Your request</h3>
+                <form action="https://formsubmit.co/tikt39217@gmail.com" method="POST">
+
+                    <div class="input-row">
+                        <div class="input-group">
+                            <input type="hidden" name="_subject" value="New submission!">
+                            <label>Name</label>
+                            <input type="text" class="form-control" name="name" required>
+                            <input type="hidden" name="_name" value="https://kelemlimoservice.com/thankyou.html" />
+                        </div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" required>
+                        </div> 
+                    </div>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label>Phone</label>
+                            <input type="number" class="form-control" name="phone" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Subject</label>
+                            <input type="text" class="form-control" name="Subject" >
+                        </div> 
+                    </div>
+                    <label>Message</label>
+                    <textarea class="form-control" rows="10" name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send</button>
+               </form>
+            </div>
+            <div class="contact-right">
+                <h3>Reach us</h3>
+                <table>
+                    <tr>
+                        <td>Email:</td>
+                        <td>megerssatemtime@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>614-599-7247</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+      </div>
+      
+   </form>
+    </section>
+    <script type="text/javascript">
+      function imgSlider(anything) {
+        document.querySelector(".car").src = anything;
+      }
+      function changeCircleColor(color) {
+        const circle = document.querySelector(".circle");
+        circle.style.backgroundColor = color;
+      }
+      function toggleMenu() {
+        var menuToggle = document.querySelector(".toggle");
+        var navgation = document.querySelector(".navgation");
+        menuToggle.classList.toggle("active");
+        navgation.classList.toggle("active");
+      }
+    </script>
+  </body>
+</html>
